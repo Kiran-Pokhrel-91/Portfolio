@@ -1,0 +1,524 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(11, 72%, 55%);
+  --first-color-dark: hsl(11, 63%, 50%);
+  --title-color: hsl(180, 4%, 98%);
+  --title-color-black: hsl(180, 4%, 12%);
+  --text-color: hsl(180, 4%, 72%);
+  --body-color: hsl(180, 12%, 8%);
+  --container-color: hsl(180, 6%, 12%);
+
+  /*========== Font family ==========*/
+  /* --body-font:roboto;
+  --second-font: 'Zen Dots', sans-serif; */
+  --second-font:'Roboto',sans-serif;
+  --body-font: sans-serif;
+
+  /*========== Font sizes ==========*/
+  --h1-font-size: 2.75rem;
+  --h2-font-size: 2.25rem;
+  --h3-font-size: 1.25rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semibold: 600;
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-regular);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  line-height: 150%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.main-logo{
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-size: var(--h3-font-size);
+}
+
+.main-logo-image{
+  width: 20px;
+}
+
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 1em 1.5em;
+  color: var(--title-color-black);
+  font-weight: var(--font-semibold);
+  transition: background-color 0.5s;
+}
+
+
+.button:hover{
+  background-color: var(--first-color-dark);
+}
+
+.button-flex{
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25rem;
+  column-gap: 0.5rem;
+}
+
+.button-flex i{
+  transition: transform 0.3s;
+}
+
+.button-flex:hover i{
+  transform: translateX(0.5rem);
+}
+
+.nav-button{
+  background-color: var(--title-color);
+}
+
+.nav-toggle,
+.nav-close{
+  display: none;
+}
+
+.section{
+  padding-top: 8em;
+  
+}
+
+.description{
+  margin-top: 1em;
+  font-size: var(--h3-font-size);
+  max-width: 460 px;
+  margin-bottom: 1.5rem;
+}
+
+.title{
+  width: fit-content;
+  font-size: var(--h2-font-size);
+  border-bottom: 0.5rem solid var(--first-color);
+}
+
+.subtitle{
+  font-size: var(--h2-font-size);
+  padding-top: 1.25em;
+  
+}
+
+/*=============== LAYOUT ===============*/
+.container{
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: 1.25em;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header{
+  background-color: var(--container-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav,
+.nav-list{
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+
+.nav{
+  justify-content: space-between;
+  height: 5.5rem;
+}
+
+.nav-link,
+.nav-close,
+.nav-toggle{
+  color: var(--text-color);
+}
+
+.nav-list{
+  column-gap: 4rem;
+}
+
+.nav-link{
+  transition: color 0.3s;
+}
+
+.nav-link:hover{
+  color: var(--first-color);
+}
+
+/*=============== MAIN ===============*/
+.main{
+  overflow: hidden;
+}
+
+/*=============== HOME ===============*/
+.home-container{
+  height: 100vh;
+  padding-top: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-title{
+  font-size: var(--h1-font-size);
+  color: var(--first-color);
+  margin-block: 0.75em 1em;
+}
+
+.home-subtitle{
+  font-size: var(--h2-font-size);
+}
+
+.home-image{
+  margin-block:6em 6em;
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+/*=============== About Me ===============*/
+
+
+.about-me-data p:last-child{
+  color: var(--first-color);
+}
+.personal-info{
+  display: flex;
+  color: var(--title-color);
+}
+
+.personal-info-right{
+  padding-inline-end: 5em;
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.personal-info-left{
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-item{
+  font-size: var(--h3-font-size);
+  border-bottom: 1px solid gray;
+}
+
+span{
+  color: gray;
+  padding-inline: 0.1em;
+}
+
+.education-exprience{
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.education{
+  padding: 1.5em;
+  width: 48%;
+  background-color: var(--container-color);
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.exprience{
+  display: none;
+  padding: 1.5em;
+  width: 48%;
+  background-color: var(--container-color);
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.timeline-title{
+  color: var(--first-color);
+}
+
+.timeline{
+  padding: 1.5em;
+}
+
+.timeline-top{
+  display: flex;
+}
+
+.timeline-description{
+  font-size: var(--h3-font-size);
+  max-width: 460 px;
+  margin-bottom: 1.5em;  
+}
+
+/*=============== Projects ===============*/
+
+
+.project h2{
+  color: var(--text-color);
+}
+
+.project-title{
+  width: fit-content;
+  font-size: var(--h2-font-size);
+  border-bottom: 0.5rem solid var(--first-color);
+}
+
+.project-subtitle{
+  font-size: var(--h2-font-size);
+  padding-top: 1.25em;  
+  margin-bottom:0.5em;
+}
+
+.project-items{
+  display: flex;
+}
+
+.project-list{
+  margin: 1rem 8rem 3rem 0;
+  width: 20rem;
+  height: 15rem;
+}
+
+.project{
+  margin-bottom: 5em;
+}
+/*=============== Contact-me ===============*/
+.contact-me-description{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-me-subtitle{
+  color: var(--first-color);
+}
+
+.contact-me-description h3{
+  padding-top: 1em;
+  margin-bottom: 3em;
+}
+
+.contact-me-items{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.user-name-email{
+  display: flex;
+  justify-content: space-between;
+}
+.contact-me-form{
+  outline: none;
+}
+.name,
+.email{
+  padding: 1em;
+  width: 49%;
+  border: 1px solid gray;
+  border-radius: 30px;
+  margin-bottom: 1em;
+}
+
+.subject,
+.message{
+  padding: 1em;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 30px;
+  margin-bottom: 1em;
+}
+
+.message{
+  min-height: 200px;
+  background-color: inherit;
+  font-size: 1rem;
+  color: white;
+}
+
+.contact-me-form input:focus{
+  outline: 1px solid white;
+}
+
+.middle{
+  margin-bottom: 1.5em;
+  text-align: center;
+  margin-top: -1em;
+}
+
+.submit{
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 5em;
+}
+
+.submit:hover{
+  font-size: 1.2rem;
+}
+
+/*=============== Responsive ===============*/
+
+@media screen and (max-width:850px) {
+  .education-exprience{
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 200%;
+  }
+  .education{
+    margin-bottom: 1em;
+  }
+  .contact-me-items{
+    padding-inline: 5em;
+    max-width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .nav{
+    display: none;
+  }
+  .home-image{
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width:700px) {
+
+ .project-items{
+  flex-direction: column;
+  align-items: center;
+}
+.contact-me-items{
+  flex-direction: column;
+}
+.personal-info{
+  flex-direction: column;
+  width: 100%;
+}
+.personal-info-right{
+  margin-bottom: 1em;
+  min-width: 98%;
+}
+.personal-info-left{
+  margin-bottom: 1em;
+  min-width: 98%;
+}
+.info-item{
+  border: none;
+}
+.contact-me-items{
+  margin: 0;
+  padding: 0;
+}
+.user-name-email{
+  flex-direction: column;
+}
+.name,
+.email{
+  width: 100%;
+}
+}
+
+@media screen and (max-width:560px) {
+.education,
+.exprience{
+  padding: 1em;
+  width: 51%;
+}
+.timeline{
+  padding: 1em;
+} 
+}
+
+@media screen and (max-width:465px) {
+  .button-flex{
+    display: block;
+    margin: 1em;
+    width: 45%;
+    border-radius:30px;
+  }   
+  :root{
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+  } 
+
+  .button-flex{
+    font-size: 1rem;
+    min-width: 145px;
+    max-width: 160px;
+  }
+}
