@@ -570,69 +570,78 @@ body {
 
 /* Project Section Styles */
 .project-card {
-    background: var(--container-color);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
 
-.project-content h3 {
-    font-size: var(--h2-font-size);
-    color: var(--title-color);
-    margin-bottom: 1rem;
-}
-
-.project-description {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.project-tools {
+.project-tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    margin: 1rem 0;
 }
 
-.tool-tag {
-    padding: 0.4rem 1rem;
-    background: var(--bg-gradient-1);
+.tech-tag {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(
+        135deg,
+        rgba(79, 70, 229, 0.1),
+        rgba(6, 182, 212, 0.1)
+    );
+    color: var(--first-color);
     border-radius: 20px;
     font-size: 0.875rem;
-    color: var(--first-color);
     font-weight: 500;
-}
-
-.project-button {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    backdrop-filter: blur(4px);
 }
 
-.project-button i {
-    font-size: 1.25rem;
+.tech-tag:hover {
+    background: var(--first-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+    border-color: transparent;
 }
 
-.contact-me-form input,
-.contact-me-form textarea {
-    background-color: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    color: var(--text-color);
+.tech-tag i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
 }
 
-.contact-me-form input:focus,
-.contact-me-form textarea:focus {
-    border-color: var(--first-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+.tech-tag:hover i {
+    transform: scale(1.1);
 }
 
+@media screen and (max-width: 768px) {
+    .project-items {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+}
 
+@media screen and (max-width: 480px) {
+    .project-items {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem;
+    }
+}
 
 /* Stats and Info Items */
 .info-item {
@@ -1087,15 +1096,137 @@ html {
     }
 }
 
-/*=============== Contact Links ===============*/
-.contact-me-list a {
-    text-decoration: none;
-    color: var(--text-color);
+/*=============== Contact Section ===============*/
+.contact-me-container {
+    padding: 4rem 0;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
-.contact-me-list a:visited,
-.contact-me-list a:hover,
-.contact-me-list a:active {
-    color: var(--text-color);
-    text-decoration: none;
+.contact-me-data {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contact-me-description {
+    margin-bottom: 2rem;
+}
+
+.contact-me-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.contact-me-list {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--container-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    min-width: auto;
+    flex: 0 1 auto;
+}
+
+.contact-me-list:hover {
+    transform: translateY(-5px);
+}
+
+.contact-me-list i {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.contact-me-form {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--container-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.user-name-email {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.name,
+.email {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.subject-message {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.subject {
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.message {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--first-color);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.submit:hover {
+    background-color: var(--first-color-dark);
+    transform: translateY(-2px);
+}
+
+/* Form Input Styles */
+.name,
+.email,
+.subject,
+.message {
+    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    font-family: var(--body-font);
+    outline: none;
+}
+
+.name:hover,
+.email:hover,
+.subject:hover,
+.message:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+.name:focus,
+.email:focus,
+.subject:focus,
+.message:focus {
+    border-color: var(--first-color);
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.15);
+    transform: translateY(-2px);
 }
