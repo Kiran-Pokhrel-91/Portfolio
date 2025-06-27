@@ -1,25 +1,11 @@
 const projects = [
     {
-        title: "Sales Prediction Model",
-        description: "Developed a machine learning model using Python and scikit-learn to predict retail sales with 92% accuracy. Implemented time series analysis and feature engineering techniques.",
+        title: "Malaria Cell Diagnosis Model",
+        description: "Developed a machine learning model using Python and TensorFlow to predict malaria from blood cell images. The model achieved an accuracy of 95% on the test dataset.",
         githubLink: "https://github.com/kiran-pokhrel-91/sales-prediction",
-        tools: ["Python", "Pandas", "Scikit-learn", "Time Series Analysis"],
+        tools: ["Python", "Pandas", "TensorFlow", "Keras", "matplotlib", "seaborn"],
         category: "Data Science"
     },
-    {
-        title: "Customer Segmentation Analysis",
-        description: "Applied K-means clustering to segment customers based on purchasing behavior. Created interactive visualizations using Plotly and Dash.",
-        githubLink: "https://github.com/kiran-pokhrel-91/customer-segmentation",
-        tools: ["Python", "Scikit-learn", "Plotly", "Dash"],
-        category: "Data Science"
-    },
-    {
-        title: "Sentiment Analysis Dashboard",
-        description: "Built an NLP-based sentiment analysis tool for social media data. Utilized BERT model for text classification and streamlit for interactive dashboard.",
-        githubLink: "https://github.com/kiran-pokhrel-91/sentiment-analysis",
-        tools: ["Python", "NLTK", "BERT", "Streamlit"],
-        category: "Data Science"
-    }
 ];
 
 // Function to create a project card

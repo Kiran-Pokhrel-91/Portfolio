@@ -156,10 +156,106 @@ body {
 
 /* Header background */
 .header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px var(--shadow-color);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 0.25rem 0;
+}
+
+.nav {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--title-color);
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--first-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--first-color);
+}
+
+.nav-button {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(45deg, var(--first-color), var(--secondary-color));
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
+  background: linear-gradient(45deg, var(--secondary-color), var(--first-color));
+}
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.main-logo-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  
+  .nav-button {
+    padding: 0.5rem 1rem;
+  }
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -222,6 +318,8 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
+  list-style: none;
+  margin: 0;
 }
 
 .nav-link {
@@ -343,9 +441,9 @@ body {
 /*=============== HOME ===============*/
 .home-container{
   height: 100vh;
-  padding-top: 2em;
+  padding: 4rem 0 2rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;  /* Changed from center to flex-start */
   justify-content: space-between;
   gap: 2rem;
 }
@@ -353,9 +451,11 @@ body {
 .home-content {
   flex: 1;
   max-width: 600px;
+  padding-top: 2rem;  /* Added padding to top */
 }
 
 .home-image {
+  margin-top: 2rem;  /* Added margin to align with content */
   width: 250px;  /* Reduced from 300px */
   height: 250px; /* Reduced from 300px */
   object-fit: cover;
@@ -385,9 +485,9 @@ body {
 
 @media screen and (max-width: 768px) {
   .home-container {
-    flex-direction: column;
+    padding-top: 6rem;
+    align-items: center;
     text-align: center;
-    padding-top: 5rem;
   }
 
   .home-content {
@@ -1476,4 +1576,53 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
   background: linear-gradient(45deg, var(--secondary-color), var(--first-color));
+}
+
+/* Mobile Navigation Styles */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--title-color);
+}
+
+.nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--title-color);
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: var(--container-color);
+    width: 80%;
+    height: 100vh;
+    padding: 4rem 0 0;
+    transition: right 0.4s;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    row-gap: 2.5rem;
+  }
+
+  .nav-close {
+    display: block;
+  }
+
+  .show-menu {
+    right: 0;
+  }
 }
