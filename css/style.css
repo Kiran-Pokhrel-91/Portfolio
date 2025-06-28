@@ -1626,3 +1626,11 @@ html {
     right: 0;
   }
 }
+
+.description.sub {
+  max-width: 900px;
+  width: 100%;
+  text-align: justify;
+  word-break: break-word;
+  display: block;
+}
